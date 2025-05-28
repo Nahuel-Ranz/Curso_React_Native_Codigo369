@@ -5,7 +5,7 @@ import { Stack } from "expo-router";
 // En este _layout general, especificamos las carpetas a donde hemos de movernos, ya en cada una habrá su _layout.
 // Aquí le indicamos "recordemos, con los paréntesis", que tiene que dirigirse hacia un grupo.
 export default function RootLayout() {
-    return (<Stack>
-        <Stack.Screen name="(conversor)" options={{headerShown:false}}/>
+    return (<Stack screenOptions={{headerShown:false}}>
+        <Stack.Screen name="(conversor)"/>
     </Stack>);
 }
