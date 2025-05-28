@@ -1,7 +1,6 @@
 import { useState } from "react";
+import { ScrollView } from "react-native";
 import styled, { ThemeProvider } from "styled-components/native";
-
-// otra manera de importar una imagen.
 import anyImageName from '../assets/images/react-logo.png';
 import { darkTheme, lightTheme } from '../styles/theme';
 
@@ -15,15 +14,27 @@ export default function Screen1() {
         curso: 'React Native'
     }
 
-    // Image source: para establecer la ruta, debemos 'requerirla'.
-    // Se la requiere a la imagen, porque no está aquí. La imagen que fue importada, no se necesita requerirla.
+    // ScrollView: siempre rodea a las vistas enteras, ya que pueden no mostrar todo su contenido en una sola pantalla.
+    // NOTA PERSONAL:: Conflicto: ScrollView vs flex
+    // TextInput:: equivalen al 'input' en HTML.
+    // El TextInput con un 'value' será estático.
+    // TextInput prop: keyboradType: indica el tipo de entrada.
     return (<ThemeProvider theme={currentTheme}>
-        <Container>
-            <Imagen source={anyImageName} />
-            <Imagen source={require('../assets/images/icon.png')}/>
-        </Container>
+        <ScrollView>
+            <Container>
+                <Imagen source={anyImageName} />
+                <Imagen source={require('../assets/images/icon.png')}/>
+                <Intro placeholder="enter a number" keyboardType="numeric"></Intro>
+            </Container>
+        </ScrollView>
+        
     </ThemeProvider>);
 }
+
+const Intro = styled.TextInput`
+    backgroundColor: #ddd;
+    color: #000;
+`
 
 const Imagen = styled.Image`
     width: 100;
