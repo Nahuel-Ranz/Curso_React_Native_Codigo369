@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ScrollView } from "react-native";
 import styled, { ThemeProvider } from "styled-components/native";
-import anyImageName from '../assets/images/react-logo.png';
-import { darkTheme, lightTheme } from '../styles/theme';
+import anyImageName from '../../assets/images/react-logo.png';
+import { darkTheme, lightTheme } from '../../styles/theme';
 
 export default function Screen1() {
 
@@ -24,7 +24,7 @@ export default function Screen1() {
             <Container>
                 <Imagen source={anyImageName} />
                 <Imagen source={require('../assets/images/icon.png')}/>
-                <Intro placeholder="enter a number" keyboardType="numeric"></Intro>
+                <Intro placeholder="Number" keyboardType="numeric"></Intro>
             </Container>
         </ScrollView>
         
