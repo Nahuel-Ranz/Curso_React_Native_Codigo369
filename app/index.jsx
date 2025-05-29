@@ -4,19 +4,23 @@ import styled from 'styled-components/native';
 // uso de Link para el enrutamiento dinámico
 import { Link } from 'expo-router';
 
+// uso de iconos
+import { MaterialIcons } from '@expo/vector-icons';
+
 export default function Component() {
     
     // Como segunda propiedad de cada objeto(grupo) le agregamos su ruta(absoluta desde 'app')
     const routes = [
-        {name: 'conversor', ref: "/(conversor)"},
-        {name: 'theory', ref: "/(theory)"}
+        {name: 'conversor', ref: "/conversor"},
+        {name: 'theory', ref: "/theory"}
     ];
 
     // Implementación del Link. Requiere una prop. href.
     const renderItem = ({item}) => {
-        return (<Link href={item.ref}>
+        return (<LinkButton href={item.ref}>
+            <MaterialIcons name='insert-drive-file' size={24}/>
             <Title>{item.name}</Title>
-        </Link>);
+        </LinkButton>);
     }
 
     return (<Container>
@@ -34,8 +38,21 @@ const Container = styled.View`
     flex: 1;
     justifyContent: center;
     alignItems: center;
+    gap: 15px;
 `;
 
 const Title = styled.Text`
 
+`;
+
+// estilos para el renderItem.
+// como Link no es nativo, sino que viene de expo-router, lo indicamos entre paréntesis.
+const LinkButton = styled(Link)`
+    border: 2px solid #333;
+    border-radius: 20px;
+    padding: 10px;
+    marginBottom: 15;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
 `;
