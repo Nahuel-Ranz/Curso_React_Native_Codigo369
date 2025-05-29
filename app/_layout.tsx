@@ -6,6 +6,7 @@ import { Stack } from "expo-router";
 // Aquí le indicamos "recordemos, con los paréntesis", que tiene que dirigirse hacia un grupo.
 export default function RootLayout() {
     return (<Stack screenOptions={{headerShown:false}}>
+        <Stack.Screen name="index"/>
         <Stack.Screen name="(conversor)"/>
         <Stack.Screen name="(theory)"/>
     </Stack>);

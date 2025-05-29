@@ -1,21 +1,27 @@
-import { FlatList } from 'react-native-gesture-handler';
+import { FlatList, StatusBar } from 'react-native';
 import styled from 'styled-components/native';
+
+// uso de Link para el enrutamiento dinámico
+import { Link } from 'expo-router';
 
 export default function Component() {
     
-    // Lista: en este arreglo 'routes', se encuentran los datos, que son objetos.
+    // Como segunda propiedad de cada objeto(grupo) le agregamos su ruta(absoluta desde 'app')
     const routes = [
-        {name: 'conversor'},
-        {name: 'theory'}
-    ]
+        {name: 'conversor', ref: "/(conversor)"},
+        {name: 'theory', ref: "/(theory)"}
+    ];
 
-    // Componente: imprime el valor '*.name' del objeto que recibe.
-    const renderItem = ({item}) => (
-        <Title>{item.name}</Title>
-    )
+    // Implementación del Link. Requiere una prop. href.
+    const renderItem = ({item}) => {
+        return (<Link href={item.ref}>
+            <Title>{item.name}</Title>
+        </Link>);
+    }
 
     return (<Container>
-        <Title>Menu</Title>
+        <StatusBar barStyle={'auto'}></StatusBar>
+        <Title style={{marginTop:50}}>Menu</Title>
         <FlatList
             keyExtractor={(item) => item.name}   // "extrae" un 'id' del elemento si es que este no lo tiene.
             data={routes}            // trabaja con el arreglo antes definido.
