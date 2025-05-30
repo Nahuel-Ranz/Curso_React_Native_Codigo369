@@ -1,45 +1,8 @@
 import { SectionList } from 'react-native';
 import styled from 'styled-components/native';
 
-export function List() {
-	const data = [
-		{product: 'aceite', precio: '$2300'},
-		{product: 'agua mineral', precio: '$1300'},
-		{product: 'agua saborizada', precio: '$1600'},
-		{product: 'ajo', precio: '$1000'},
-		{product: 'alfajores', precio: '$1000'},
-		{product: 'arroz', precio: '$1300'},
-		{product: 'banana', precio: '$1000'},
-		{product: 'cafe', precio: '$2300'},
-		{product: 'cebolla', precio: '$1600'},
-		{product: 'chicle', precio: '$2300'},
-		{product: 'chizito', precio: '$1600'},
-		{product: 'chocolatin', precio: '$1000'},
-		{product: 'chupetín', precio: '$1000'},
-		{product: 'cigarrillos', precio: '$1600'},
-		{product: 'cocido', precio: '$1000'},
-		{product: 'fideo', precio: '$1000'},
-		{product: 'gaseosa', precio: '$1600'},
-		{product: 'harina', precio: '$1600'},
-		{product: 'jugo en polvo', precio: '$1600'},
-		{product: 'mandioca', precio: '$2300'},
-		{product: 'manzana', precio: '$1600'},
-		{product: 'manzanilla', precio: '$1000'},
-		{product: 'mayonesa', precio: '$2300'},
-		{product: 'morrón', precio: '$2300'},
-		{product: 'papa', precio: '$1000'},
-		{product: 'pera', precio: '$1600'},
-		{product: 'pure', precio: '$1000'},
-		{product: 'salchichas', precio: '$1000'},
-		{product: 'sandia', precio: '$1300'},
-		{product: 'soda', precio: '$1300'},
-		{product: 'tomate', precio: '$1600'},
-		{product: 'tutuca', precio: '$1300'},
-		{product: 'yerba', precio: '$1600'},
-		{product: 'zanahoria', precio: '$1000'}
-	];
-
-    const dataSection = [{
+export function Section_List() {
+	const dataSection = [{
             letter: 'a',
             data: [ // data: al parecer, esta palabra es reservada.
                 {product: 'aceite', precio: '$2300'},
@@ -180,10 +143,6 @@ const ContainerItem = styled.View`
 const Product = styled.Text`
     color: #fff;
     font-size: 30px;
-`;
-
-const Flat = styled.FlatList`
-    backgroundColor: #f88;
 `;
 
 const HeaderText = styled.Text`

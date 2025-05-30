@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import styled from 'styled-components/native';
-import { List } from './list';
-import { Screen2 } from './screen2';
+import { Flat_List } from './Flat_list';
+import { Section_List } from './Section_list';
 
 export default function Index() {
     const dataCategorias = [
-        { id: 1, name: 'FlatList', component:<List/>},
-        { id: 2, name: 'SectionList', component:<Screen2/>}
+        { id: 1, name: 'FlatList', component:<Flat_List/>},
+        { id: 2, name: 'SectionList', component:<Section_List/>}
     ];
 
     const [selectedCategory, setSelectedCategory] = useState(dataCategorias[0]);
