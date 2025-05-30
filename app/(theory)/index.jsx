@@ -103,6 +103,9 @@ export default function Index() {
         return(<HeaderText>{ section.letter }</HeaderText>);
     }
 
+    const renderFooter = () => {
+        return (<Footer>Footer Section</Footer>);
+    }
     return (<Container>
         <Title>SectionList</Title>
         <SectionList
@@ -112,6 +115,7 @@ export default function Index() {
             // este es el más interesante, ya que no le especifico que debe tratar con los valores de la propiedad
             // 'data' del objeto, sin embargo lo hace.
             renderItem={renderItem}
+            renderSectionFooter={renderFooter}
         />
     </Container>);
 }
@@ -150,4 +154,10 @@ const HeaderText = styled.Text`
     font-weight: bold;
     fontSize: 35;
     margin-top: 30px;
+`;
+
+const Footer = styled.Text`
+    color: #8f8;
+    fontSize: 25;
+    textAlign: center;
 `;
