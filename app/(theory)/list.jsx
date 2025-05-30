@@ -1,7 +1,7 @@
 import { SectionList } from 'react-native';
 import styled from 'styled-components/native';
 
-export default function List() {
+export function List() {
 	const data = [
 		{product: 'aceite', precio: '$2300'},
 		{product: 'agua mineral', precio: '$1300'},

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export default function Component() {
+export function Screen2() {
     return (<Container>
         <Texto>Componente</Texto>
     </Container>);

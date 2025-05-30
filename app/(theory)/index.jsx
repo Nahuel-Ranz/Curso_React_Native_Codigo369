@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import styled from 'styled-components/native';
+import { List } from './list';
+import { Screen2 } from './screen2';
 
 export default function Index() {
     const dataCategorias = [
-        { id: 1, name: 'FlatList'},
-        { id: 2, name: 'SectionList'}
+        { id: 1, name: 'FlatList', component:<List/>},
+        { id: 2, name: 'SectionList', component:<Screen2/>}
     ];
 
     const [selectedCategory, setSelectedCategory] = useState(dataCategorias[0]);
@@ -17,7 +19,7 @@ export default function Index() {
                     return (
                         <CategoryContainer
                             key={ item.id }
-                            selected={selectedCategory.id === item.id}// esta propiedad nativa no existe, la vamos a crear.
+                            selected={selectedCategory.id === item.id}
                             onPress={() => setSelectedCategory(item)}
                         >
                             <CategoryName selected={selectedCategory.id === item.id}>{ item.name }</CategoryName>
@@ -26,6 +28,9 @@ export default function Index() {
                 })
             }
         </CategoriaSection>
+        <ContentComponent>
+            {selectedCategory.component}
+        </ContentComponent>
     </Container>);
 }
 
@@ -59,4 +64,11 @@ const CategoryContainer = styled.TouchableOpacity`
 const CategoryName = styled.Text`
     fontSize: 24;
     color: ${ (props) => (props.selected ? "white" : "lightgreen")}
+`;
+
+const ContentComponent = styled.View`
+    flex: 1;
+    width: 100%;
+    marginTop: 20;
+    backgroundColor: red;
 `;
