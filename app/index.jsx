@@ -6,8 +6,8 @@ import styled from 'styled-components/native';
 export default function Component() {
     
     const routes = [
-        {name: 'conversor', ref: "/conversor"},
-        {name: 'theory', ref: "/theory"}
+        {name: 'conversor', ref: "/(conversor)"},
+        {name: 'theory', ref: "/(theory)"}
     ];
 
     const renderItem = ({item}) => {
